@@ -9,6 +9,7 @@
 <?php
 get_template_part('partials/globie');
 get_template_part('partials/seo');
+$site_options = get_site_option('_igv_site_options');
 ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
@@ -21,6 +22,8 @@ get_template_part('partials/seo');
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <?php } ?>
 
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/now-alt" type="text/css"/>
+
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -29,5 +32,20 @@ get_template_part('partials/seo');
 <section id="main-container">
 
   <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+    <h1 class="u-hidden"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+
+<?php
+if (!empty($site_options['metadata_logo'])) {
+?>
+  <div class="container">
+    <div class="grid-row">
+      <div class="grid-item item-s-12 item-m-5 item-l-6">
+        <a href="/">
+          <img src="<?php echo $site_options['metadata_logo']; ?>" />
+        </a>
+    </div>
+<?php
+}
+?>
+
   </header>
