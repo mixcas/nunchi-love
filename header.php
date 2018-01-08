@@ -31,7 +31,7 @@ $site_options = get_site_option('_igv_site_options');
 
 <section id="main-container">
 
-  <header id="header">
+  <header id="header" class="padding-top-tiny padding-bottom-tiny">
     <h1 class="u-hidden"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 
 <?php
@@ -39,8 +39,8 @@ if (!empty($site_options['metadata_logo'])) {
 ?>
   <div class="container">
     <div class="grid-row">
-      <div class="grid-item item-s-12 item-m-5 item-l-6">
-        <a href="/">
+      <div class="grid-item item-s-12 item-m-3 item-l-2">
+        <a href="<?php echo home_url(); ?>">
           <img src="<?php echo $site_options['metadata_logo']; ?>" />
         </a>
     </div>

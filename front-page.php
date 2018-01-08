@@ -5,7 +5,6 @@ get_header();
 <main id="main-content">
   <section id="home-products">
     <div class="container">
-      <div class="grid-row justify-center">
 
 <?php
 
@@ -19,24 +18,53 @@ if ($products->have_posts()) {
   while ($products->have_posts()) {
     $products->the_post();
     $product = wc_get_product(get_the_ID());
-    pr($product->get_regular_price());
 
+    // Ensure visibility
+    if ( !empty( $product ) || $product->is_visible() ) {
 ?>
 
-        <article <?php post_class('grid-item item-s-12 item-m-10 text-align-center'); ?> id="post-<?php the_ID(); ?>">
-          <a href="<?php the_permalink() ?>">
-            <?php the_post_thumbnail(); ?>
-          </a>
+        <article <?php post_class('grid-row justify-end'); ?> id="post-<?php the_ID(); ?>">
+          <div class="grid-item item-s-12 item-m-9 item-l-6 padding-top-small">
+            <a href="<?php the_permalink() ?>">
+              <?php the_post_thumbnail(); ?>
+            </a>
+          </div>
 
-          <a href="<?php the_permalink() ?>"><h2><?php the_title(); ?></h2></a>
+          <div class="grid-item item-s-12 item-m-3 no-gutter">
+            <div class="grid-row product-data padding-top-small">
+              <div class="product-title grid-item item-s-12 padding-top-tiny padding-bottom-tiny margin-bottom-tiny">
+<?php
+      /**
+       * woocommerce_shop_loop_item_title hook.
+       *
+       * @hooked woocommerce_template_loop_product_title - 10
+       */
 
-          <a href="<?php the_permalink() ?>">
-            <?php echo $product->get_regular_price(); ?>
-          </a>
+      do_action( 'woocommerce_shop_loop_item_title' );
+?>
+              </div>
 
+              <div class="grid-item item-s-12">
+<?php
+      /**
+       * woocommerce_after_shop_loop_item_title hook.
+       *
+       * @hooked woocommerce_template_loop_rating - 5
+       * @hooked woocommerce_template_loop_price - 10
+       */
+      do_action( 'woocommerce_after_shop_loop_item_title' );
+?>
+              </div>
+
+              <div class="grid-item item-s-12">
+                <a href="<?php the_permalink() ?>">Comprar ⟶</a>
+              </div>
+            </div>
+          </div>
         </article>
 
 <?php
+    }
   }
 } else {
 ?>
@@ -44,7 +72,6 @@ if ($products->have_posts()) {
 <?php
 } ?>
 
-      </div>
     </div>
   </section>
 
