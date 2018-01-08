@@ -45,3 +45,5 @@ function add_lazysize_on_srcset($attr) {
 
 }
 add_filter('wp_get_attachment_image_attributes', 'add_lazysize_on_srcset');
+
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
