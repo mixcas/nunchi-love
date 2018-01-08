@@ -32,7 +32,7 @@ if ($products->have_posts()) {
 
           <div class="grid-item item-s-12 item-m-3 no-gutter">
             <div class="grid-row product-data padding-top-small">
-              <div class="product-title grid-item item-s-12 padding-top-tiny padding-bottom-tiny margin-bottom-tiny">
+              <div class="black-title grid-item item-s-12 padding-top-tiny padding-bottom-tiny margin-bottom-tiny">
 <?php
       /**
        * woocommerce_shop_loop_item_title hook.
