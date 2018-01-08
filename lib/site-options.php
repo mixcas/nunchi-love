@@ -58,6 +58,22 @@ function igv_register_theme_options_metabox() {
     // 'save_button'     => esc_html__( 'Save Theme Options', 'cmb2' ), // The text for the options-page save button. Defaults to 'Save'.
   ) );
 
+  // Footer
+
+  $site_options->add_field( array(
+    'name'    => esc_html__( 'Footer', 'cmb2' ),
+    'desc'    => esc_html__( '', 'cmb2' ),
+    'id'      => $prefix . 'footer_title',
+    'type'    => 'title',
+  ) );
+
+  $site_options->add_field( array(
+    'name'    => esc_html__( 'About', 'cmb2' ),
+    'desc'    => esc_html__( '', 'cmb2' ),
+    'id'      => $prefix . 'footer_about',
+    'type'    => 'wysiwyg',
+  ) );
+
   // Social Media variables
 
   $site_options->add_field( array(

@@ -1,9 +1,13 @@
+<?php
+$site_options = get_site_option('_igv_site_options');
+
+$about = $site_options['_igv_footer_about'];
+?>
   <footer id="footer" class="padding-top-mid padding-bottom-large">
     <div class="container">
       <div class="grid-row justify-center">
         <div class="grid-item item-s-12 item-m-3">
-          <p><b>NUNㅊI</b> es una comunidad de capopers como tu, que hablamos español, amamos a nuestrxs idols y hacemos todo pop ellxs. </p>
-          <p><b>NUNㅊI</b> es amor ❤️</p>
+        <?php echo apply_filters('the_content', $about); ?>
         </div>
         <div class="grid-item item-s-12 item-m-3 no-gutter">
           <div class="grid-row">
