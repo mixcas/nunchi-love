@@ -31,7 +31,7 @@ $site_options = get_site_option('_igv_site_options');
 
 <section id="main-container">
 
-  <header id="header" class="padding-top-tiny padding-bottom-tiny">
+  <header id="header" class="padding-top-tiny padding-bottom-tiny drop-shadow">
     <h1 class="u-hidden"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 
 <?php

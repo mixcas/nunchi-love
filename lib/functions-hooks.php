@@ -41,3 +41,18 @@ function custom_woocommerce_image_dimensions() {
 }
 
 add_action( 'after_switch_theme', 'custom_woocommerce_image_dimensions', 1 );
+
+
+/**
+ * Disable description, reviews and additional info tabs
+ */
+function woo_remove_product_tabs( $tabs ) {
+
+  unset( $tabs['description'] );      	// Remove the description tab
+  unset( $tabs['reviews'] ); 			// Remove the reviews tab
+  unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+  return $tabs;
+
+}
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );

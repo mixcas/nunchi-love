@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="product-<?php the_ID(); ?>" <?php post_class('container'); ?>>
   <div class="grid-row">
-    <div class="grid-item item-s-8">
+    <div class="grid-item item-s-12 item-m-8 item-l-9">
 
 	<?php
 		/**
@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
     </div>
 
-    <div class="grid-item item-s-4 no-gutter">
+    <div class="grid-item item-s-12 item-m-4 item-l-3 no-gutter">
 
       <div class="product-data summary entry-summary padding-top-small">
         <div class="grid-row">

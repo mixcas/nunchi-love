@@ -24,13 +24,7 @@ if ($products->have_posts()) {
 ?>
 
         <article <?php post_class('grid-row justify-end'); ?> id="post-<?php the_ID(); ?>">
-          <div class="grid-item item-s-12 item-m-9 item-l-6 padding-top-small">
-            <a href="<?php the_permalink() ?>">
-              <?php the_post_thumbnail(); ?>
-            </a>
-          </div>
-
-          <div class="grid-item item-s-12 item-m-3 no-gutter">
+          <div class="mobile-only grid-item item-s-12 item-m-3 no-gutter">
             <div class="grid-row product-data padding-top-small">
               <div class="black-title grid-item item-s-12 padding-top-tiny padding-bottom-tiny margin-bottom-tiny">
 <?php
@@ -44,7 +38,7 @@ if ($products->have_posts()) {
 ?>
               </div>
 
-              <div class="grid-item item-s-12">
+              <div class="grid-item item-s-6 item-m-12">
 <?php
       /**
        * woocommerce_after_shop_loop_item_title hook.
@@ -56,7 +50,44 @@ if ($products->have_posts()) {
 ?>
               </div>
 
-              <div class="grid-item item-s-12">
+              <div class="grid-item item-s-6 item-m-12">
+                <a href="<?php the_permalink() ?>">Comprar ⟶</a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item item-s-12 item-m-9 item-l-6 padding-top-small">
+            <a href="<?php the_permalink() ?>">
+              <?php the_post_thumbnail(); ?>
+            </a>
+          </div>
+
+          <div class="desktop-only grid-item item-s-12 item-m-3 no-gutter">
+            <div class="grid-row product-data padding-top-small">
+              <div class="black-title grid-item item-s-12 padding-top-tiny padding-bottom-tiny margin-bottom-tiny">
+<?php
+      /**
+       * woocommerce_shop_loop_item_title hook.
+       *
+       * @hooked woocommerce_template_loop_product_title - 10
+       */
+
+      do_action( 'woocommerce_shop_loop_item_title' );
+?>
+              </div>
+
+              <div class="grid-item item-s-6 item-m-12">
+<?php
+      /**
+       * woocommerce_after_shop_loop_item_title hook.
+       *
+       * @hooked woocommerce_template_loop_rating - 5
+       * @hooked woocommerce_template_loop_price - 10
+       */
+      do_action( 'woocommerce_after_shop_loop_item_title' );
+?>
+              </div>
+
+              <div class="grid-item item-s-6 item-m-12">
                 <a href="<?php the_permalink() ?>">Comprar ⟶</a>
               </div>
             </div>

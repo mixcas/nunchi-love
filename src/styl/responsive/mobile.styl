@@ -1,6 +1,14 @@
+.drop-shadow
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15)
+
 #header
   z-index: 500
   background: $color-white
+
+#main-content
+  @extend .drop-shadow
+  position: relative
+  z-index: 100
 
 #footer
   background: $color-white
@@ -15,5 +23,6 @@
   opacity: 0.4
 
 .black-title
+  @extend .drop-shadow
   background: $color-black
   color: $color-white

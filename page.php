@@ -13,10 +13,10 @@ if (have_posts()) {
     the_post();
 ?>
 
-        <article <?php post_class('grid-item item-s-8 no-gutter'); ?> id="post-<?php the_ID(); ?>">
-          <div class="grid-row padding-top-mid">
+        <article <?php post_class('grid-item item-s-12 item-s-8 no-gutter'); ?> id="post-<?php the_ID(); ?>">
+          <div class="grid-row padding-top-small">
 
-            <div class="black-title grid-item item-s-12 margin-bottom-basic">
+            <div class="black-title grid-item item-s-12 margin-bottom-tiny">
               <h1><?php the_title(); ?></h1>
             </div>
 
